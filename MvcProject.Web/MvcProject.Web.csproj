@@ -203,17 +203,9 @@
       <Project>{351aa62a-12e4-4589-9f58-49244a123844}</Project>
       <Name>MvcProject.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvcProject.Domain\MvcProject.Domain.csproj">
-      <Project>{a113695b-72eb-4ed7-b3d5-2c6f9e152592}</Project>
-      <Name>MvcProject.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MvcProject.IOC\MvcProject.IOC.csproj">
       <Project>{b7b35f6c-8a78-4076-a574-7ca99f4175e3}</Project>
       <Name>MvcProject.IOC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MvcProject.Services\MvcProject.Services.csproj">
-      <Project>{b0c92fab-3720-47b9-a654-1bb8180c65b1}</Project>
-      <Name>MvcProject.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

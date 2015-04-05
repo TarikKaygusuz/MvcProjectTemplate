@@ -1,5 +1,5 @@
 ﻿using MvcProject.Data.Mapping;
-using MvcProject.Domain.DomainModel.Entities;
+using MvcProject.Core.Domain.Entity;
 using System.Data.Entity;
 
 namespace MvcProject.Data.Context
@@ -17,7 +17,8 @@ namespace MvcProject.Data.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new UserMapping());
+            modelBuilder.Configurations.Add(new UserMap());
+            modelBuilder.Configurations.Add(new RoleMap());
 
             base.OnModelCreating(modelBuilder);
         }

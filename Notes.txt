@@ -1,6 +1,14 @@
+*Boş bir solution oluşturdum.
+*Web, test ve gerekli olan sınıf kütüphanesi projeleri ekledim.
+*Veritabanını temsil eden modelleri oluşturdum.
+*Eklediğim modeller ile code first automigration kullanarak veritananını oluşturdum.
+Oluşturduğum proje ile yeni modeller ve bu modellere yeni alanlar ekleyip, sürekli console dan, update-database komutunu çalıştırarak veritabanı tabloları ile oynayabilirim. 
+
+
+
 Package Manager Console > MvcProject.Data > Enable-Migrations –EnableAutomaticMigrations.
 
-Package Manager Console > MvcProject.Data > Update-Database.
+Package Manager Console > MvcProject.Data > Update-DatabaseDomain 
 
 Model üzerinde değişiklik yaptıktan sonra > Update-Database. 
 
