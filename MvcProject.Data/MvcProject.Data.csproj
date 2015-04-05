@@ -60,7 +60,10 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="MigrationsSql\201504051530228_AutomaticMigration.sql" />
+    <Content Include="MigrationsSql\201504052106445_AutomaticMigration.sql" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvcProject.Core\MvcProject.Core.csproj">
       <Project>{47527aeb-be36-47a6-a793-b6f383d32da8}</Project>

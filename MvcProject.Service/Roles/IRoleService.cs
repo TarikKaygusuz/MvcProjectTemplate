@@ -1,4 +1,5 @@
 ﻿using MvcProject.Core.Domain.Entity;
+using System.Collections.Generic;
 using System.Linq;
  
 namespace MvcProject.Service.Roles
@@ -56,5 +57,12 @@ namespace MvcProject.Service.Roles
         /// </summary>
         /// <param name="roleId">Rol Id</param>
         void Delete(int roleId);
+
+        /// <summary>
+        /// Kullanıcı adına göre Role'leri getir.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        IQueryable<Role> GetRolesByUserName(string username);
     }
 }

@@ -1,7 +1,9 @@
-﻿using MvcProject.Core.Domain.Entity;
+﻿using System;
+using MvcProject.Core.Domain.Entity;
 using MvcProject.Data.Repository;
 using MvcProject.Data.UnitOfWork;
 using System.Linq;
+using System.Net.Mail;
 
 namespace MvcProject.Service.Users
 {
@@ -92,6 +94,64 @@ namespace MvcProject.Service.Users
         public void Delete(int userId)
         {
             _userRepository.Delete(userId);
+        }
+
+        /// <summary>
+        /// Confirmation mail'i gönder.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="email"></param>
+        /// <param name="confirmationUrl"></param>
+        public void SendConfirmationMail(int userId, string email, string confirmationUrl)
+        {
+            var user = Find(userId);
+            string confirmationId = user.ConfirmationId.ToString();
+            confirmationUrl += "/Account/ConfirmUser?confirmationId=" + confirmationId;
+
+            var message = new MailMessage("tarikkaygusuz@gmail.com", email)
+            {
+                Subject = "Lütfen e-posta adresinizi onaylayınız.",
+                Body = confirmationUrl
+            };
+
+            var client = new SmtpClient();
+
+            client.Send(message);
+        }
+
+        /// <summary>
+        /// Mail sistemde kullanılıyor mu?
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public bool ValidateEmail(string email)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// UserName sistemde kullanılıyor mu?
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        public bool ValidateUserName(string userName)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// ConfirmationId gönderilmiş User döner. isConfirmed kontrolü yapılabilir.
+        /// </summary>
+        /// <param name="confirmationId"></param>
+        /// <returns></returns>
+        public User Find(Guid confirmationId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool FindByUserNameAndPassword(string userName, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }

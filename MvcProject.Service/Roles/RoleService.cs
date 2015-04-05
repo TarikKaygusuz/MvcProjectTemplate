@@ -93,5 +93,15 @@ namespace MvcProject.Service.Roles
         {
             _roleRepository.Delete(roleId);
         }
+
+        /// <summary>
+        /// Kullanıcı adına göre Role'leri getir.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public IQueryable<Role> GetRolesByUserName(string username)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

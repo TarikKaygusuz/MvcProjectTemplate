@@ -17,7 +17,12 @@ namespace MvcProject.Core.Domain.Entity
         public string ProfileImageUrl { get; set; }
         public DateTime? LastLoginDate { get; set; }
         public string LastLoginIp { get; set; }
-
+        public Guid ConfirmationId { get; set; }
+        public bool IsConfirmed { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsEditable { get; set; }
+        public bool IsDeletable { get; set; }
         public virtual ICollection<Role> Roles { get; set; }
+
     }
 }

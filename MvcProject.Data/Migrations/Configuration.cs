@@ -10,6 +10,7 @@ namespace MvcProject.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(MvcProject.Data.Context.MvcProjectContext context)

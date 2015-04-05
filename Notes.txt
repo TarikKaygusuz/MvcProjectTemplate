@@ -8,10 +8,13 @@ Oluþturduðum proje ile yeni modeller ve bu modellere yeni alanlar ekleyip, sürek
 
 Package Manager Console > MvcProject.Data > Enable-Migrations –EnableAutomaticMigrations.
 
-Package Manager Console > MvcProject.Data > Update-DatabaseDomain 
+Package Manager Console > MvcProject.Data > Update-Database 
 
 Model üzerinde deðiþiklik yaptýktan sonra > Update-Database. 
 
 Burada önemli olan, bir alan silindiðinde veri kaybý olacaðýndan otomatik update çalýþmayacaktýr. Bunun için Migration klasörü içerisindeki configuration sýnýfýnýn constructor metoduna þu satýrý eklemeliyiz:
 AutomaticMigrationDataLossAllowed = true;
+
+Update-Database –Verbose
+Update-Database –Script
 
